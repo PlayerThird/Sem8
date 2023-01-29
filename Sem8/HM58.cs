@@ -8,8 +8,10 @@ namespace Sem8
     {
         internal static void Start()
         {
+            
             Console.WriteLine("Матрица А:");
             int[,] matrixA = TwoMas.CreateArray();
+            Console.WriteLine("!Количество СТОЛБЦОВ матрицы А должно быть равно количеству СТРОК матрицы В.!");
             Console.WriteLine("Матрица В:");
             int[,] matrixB = TwoMas.CreateArray();
             if (matrixA.GetLength(1) != matrixB.GetLength(0))

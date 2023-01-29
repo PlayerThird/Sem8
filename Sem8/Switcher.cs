@@ -6,7 +6,8 @@ namespace Sem8
     {
         internal static void Start()
         {
-            int y = Checker.CheckInput<int>(x => x < 53 || x > 62, "Введите номер программы: ", "Такой программы нет");
+            int y = 0;
+            y = Checker.CheckInput<int>(x => x < 53 || x > 62, "Введите номер программы: ", "Такой программы нет");
             bool check = false;
             switch (y)
             {

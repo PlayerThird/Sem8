@@ -11,7 +11,7 @@ namespace Sem8
                 "\r\nTask 54 (HM) = work" +
                 "\r\nTask 55 = work" +
                 "\r\nTask 56 (HM) = work" +
-                "\r\nTask 57 = dont work" +
+                "\r\nTask 57 = 50/50 work" +
                 "\r\nTask 58 (HM) = work" +
                 "\r\nTask 59 =  work" +
                 "\r\nTask 60 (HM) = work" +

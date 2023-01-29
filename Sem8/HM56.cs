@@ -9,13 +9,18 @@ namespace Sem8
         internal static void Start()
         {
             int[,] mass = CreateArray();
+            Console.WriteLine("Поиск максимальной строки");
+            SearchMax(mass);
+            Console.WriteLine("Поиск минимальной строки");
             SearchMin(mass);
+
 
 
             void SearchMin(int[,] array)
             {
+
                 int sum = 0;
-                int[] result= new int[array.GetLength(1)];
+                int[] result = new int[array.GetLength(1)];
                 for (int i = 0; i < array.GetLength(0); i++)
                 {
                     for (int j = 0; j < array.GetLength(1); j++)
@@ -25,7 +30,40 @@ namespace Sem8
                     result[i] = sum;
                     sum = 0;
                 }
-                Console.WriteLine(String.Join(" ,",result));
+                Console.WriteLine(String.Join(" ,", result));
+                int min = result[0];
+                foreach (var item in result)
+                {
+                    if (item < min)
+                    {
+                        min = item;
+                    }
+                }
+                int index = Array.IndexOf(result, min);
+                Console.WriteLine($"Номер строки = {index + 1}");
+                Console.Write("Эта строка самая маленькая, которую впервые встретили -> ");
+                for (int i = 0; i < array.GetLength(1); i++)
+                {
+                    Console.Write($"{array[index, i]} ");
+                }
+                Console.WriteLine();
+            }
+
+
+            void SearchMax(int[,] array)
+            {
+                int sum = 0;
+                int[] result = new int[array.GetLength(1)];
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        sum += array[i, j];
+                    }
+                    result[i] = sum;
+                    sum = 0;
+                }
+                Console.WriteLine(String.Join(" ,", result));
                 int max = result[0];
                 foreach (var item in result)
                 {
@@ -35,12 +73,13 @@ namespace Sem8
                     }
                 }
                 int index = Array.IndexOf(result, max);
-                Console.WriteLine($"Номер строки = {index+1}");
+                Console.WriteLine($"Номер строки = {index + 1}");
                 Console.Write("Эта строка самая большая, которую впервые встретили -> ");
                 for (int i = 0; i < array.GetLength(1); i++)
                 {
-                    Console.Write($"{array[index,i]} ");
+                    Console.Write($"{array[index, i]} ");
                 }
+                Console.WriteLine();
             }
 
             int[,] CreateArray()
@@ -48,7 +87,7 @@ namespace Sem8
 
                 int colums = Checker.CheckInput<int>(x => x < 0, "Введите ширину прямогульного массива", "Прямоугольник не может быть меньше 0");
 
-                
+
                 int[,] mass = new int[colums, colums];
                 mass = TwoMas.FillArray(mass);
                 TwoMas.PrintMass(mass);

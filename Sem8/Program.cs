@@ -19,7 +19,7 @@ namespace Sem8
             //HM59.Start();
             //HM60.Start();
             //HM61.Start();
-            Console.ReadKey();
+            
         }
     }
 }
