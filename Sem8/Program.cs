@@ -4,11 +4,11 @@ namespace Sem8
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
             PrintTasks.Start();
             Switcher.Start();
-           
+            Qestion.Start();
             //HM53.Start();
             //HM54.Start();
             //HM55.Start();
